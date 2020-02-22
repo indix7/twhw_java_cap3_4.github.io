@@ -17,7 +17,7 @@ public class FileUtil {
      * 例如把a文件夹(a文件夹下有1.txt和一个空文件夹c)复制到b文件夹，复制完成以后b文件夹下也有一个1.txt和空文件夹c
      */
     public static void copyDirectory(File from, File to) throws IOException {
-        makeSureFileExits(from, to);
+        makeSureFileExists(from, to);
         if (from.isDirectory()) {
             clearTheNewDirectory(to);
             for (File file : from.listFiles()) {
@@ -46,7 +46,7 @@ public class FileUtil {
      * @param to   新建的目录
      * @throws IOException
      */
-    public static void makeSureFileExits(File from, File to) throws IOException {
+    public static void makeSureFileExists(File from, File to) throws IOException {
         if (from.isDirectory()) {
             to.mkdirs();
         } else {
